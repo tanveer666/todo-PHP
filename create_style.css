@@ -85,9 +85,7 @@ html, body {
         -webkit-transition: width 0.4s ease-in-out;
          transition: width 0.4s ease-in-out;
          display: inline-block;
-         margin-left: 25%;
-         margin-right:25%;
-         width: 50%;
+         
          
 }
 input[type=button], input[type=submit], input[type=reset] {
