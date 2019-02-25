@@ -89,7 +89,7 @@ html, body {
          
 }
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
+    background-color: greenyellow;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -97,5 +97,15 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
   }
- 
-      
+  form {
+    display: inline-block;
+    text-align: center;
+    margin-left: 550px;
+    margin-top: 60px;
+ }
+ h2{
+    display: inline-block;
+    text-align: center;
+    margin-left: 680px;
+    margin-top: 100px;
+ }

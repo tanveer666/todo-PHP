@@ -73,7 +73,7 @@ html, body {
 
     }
 
-    input {
+    input{
         width: auto;
         padding: 12px 20px;
         margin: 8px 0;
@@ -98,5 +98,16 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
   }
- 
+ form {
+    display: inline-block;
+    text-align: center;
+    margin-left: 550px;
+    margin-top: 60px;
+ }
+ h2{
+    display: inline-block;
+    text-align: center;
+    margin-left: 680px;
+    margin-top: 100px;
+ }
       
