@@ -89,3 +89,14 @@ h2{
  tr:nth-child(1) {
      filter: invert(100%);
      }
+     
+     p{
+        width: auto;
+        border: 10px;
+        padding: 20px;
+        margin: 40px; 
+        color: black;
+        font-variant: normal;
+        font-family: Times New Roman, Times, serif;
+        height: 50px;
+      }
