@@ -6,7 +6,7 @@ html, body {
     }
 
     @media print {
-    	body { background-color white; }
+    	body { background-color : white; }
     }
 
     header{
