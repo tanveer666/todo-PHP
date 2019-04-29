@@ -5,33 +5,6 @@
     <link rel="stylesheet" href="css/index_style.css">
     <meta charset="utf-8">
     <title>Personal Assistence</title>
-
-    <?php
-    require "db_conn.php";
-    $e = null;
-
-    if (isset($_POST['submit'])) {
-            try {
-
-                $querry = sprintf("SELECT passHash FROM login WHERE userName = '%s' ;", $_POST['userName']);
-                $pdo_st = $pdo->query($querry);
-                $pdo_st->setFetchMode(PDO::FETCH_ASSOC);
-
-                $array = $pdo_st->fetch();
-                $isMatch = password_verify($_POST['pass'], $array['passHash']);
-
-                if ($isMatch == true) {
-                        session_start();
-                        $_SESSION['userName'] = $_POST['userName'];
-                        header("location: create.php"); //redirects user to a certain page upon successful login!
-                    }
-            } catch (PDOException $e) {
-                echo ($e->getMessage() . " " . $e->getLine());
-            }
-        }
-    ?>
-
-
 </head>
 
 <body>
@@ -49,7 +22,7 @@
         It gets complicated to manage all this. You have to plan your day, week even a month at a time.
         <br><b> So join us , manage your day with ease.</b></p>
 
-    <form method="POST">
+    <form method="POST" action = "php/index.php">
         <label id="user"> Username:</label>
 
         <input type="text" name="userName" id="user">

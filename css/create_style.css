@@ -1,0 +1,113 @@
+@charset "utf-8";
+html, body {
+    box-sizing: border-box; 
+    height: 100%;
+    width: 100%;
+    }
+
+    @media print {
+    	body { background-color : white; }
+    }
+
+    header{
+    	height: 150px;
+    	background-color: rgba(70, 130, 180, 0.5);
+    	margin-left: auto;
+    	margin-right: auto;
+
+    }
+
+    nav{
+    	margin-bottom: 0;
+    	margin-right: auto;
+    	margin-top:0px;
+    	margin-left: auto;
+    	transition-property: 120px;
+		width: 600px;
+		position: relative;
+    	padding: 2px;
+    	height: 100px;
+    	box-sizing: border-box;
+
+
+    }
+
+    nav > ul > li {
+    padding: 2px;
+    margin-right: 10px;
+	list-style-type: none;
+    background-color: #4d7e6f;
+    display: inline;
+    
+}
+
+    article {
+    	padding: 20px;
+    }
+    
+
+    body{
+
+    	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		background-image: url(../img/img.jpg);
+		background-color: lightsteelblue;
+		background-attachment: scroll;
+		background-position: left-top;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	margin: 0;
+    	padding: 0;
+    	
+
+
+
+    }
+
+    
+
+   
+    h1{
+    	color: black;
+    	text-transform: uppercase;
+    	text-shadow: 4px 4px lightgray;
+
+    }
+
+    input, textarea{
+        width: auto;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid steelblue;
+        border-radius: 20px;
+        background-color: #3CBC8D;
+        color: white;
+        -webkit-transition: width 0.4s ease-in-out;
+         transition: width 0.4s ease-in-out;
+         display: inline-block;
+         text-align: center;
+         
+         
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+ form {
+    display: inline-block;
+    text-align: center;
+    margin-left: 550px;
+    margin-top: 60px;
+ }
+ h2{
+    /*display: inline-block;
+    text-align: center;*/
+    margin-left: 680px;
+    margin-top: 100px;
+ }
+      
