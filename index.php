@@ -1,39 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require 'Twig/lib/Twig/Autoloader.php';
 
-<head>
-    <link rel="stylesheet" href="css/index_style.css">
-    <meta charset="utf-8">
-    <title>Personal Assistence</title>
-</head>
+Twig_Autoloader::register();
+    // Load twig templating engine
+    $loader = new Twig_Loader_Filesystem('views');
+    $twig = new Twig_Environment($loader);
 
-<body>
+    // Enable debugging so we can dump array
+    $twig = new \Twig\Environment($loader, [
+    'debug' => true,
+    ]);
+    $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-    <nav class="nav">
-        <a href="index.php"> Index </a> &nbsp; &nbsp;
-        <a href="register.php"> Register </a>&nbsp; &nbsp;
-        <a href="create.php"> Create List </a>&nbsp; &nbsp;
-        <a href="view.php"> View List</a>&nbsp; &nbsp;
-        <a href="delete.php"> DELETE Tasks </a>&nbsp; &nbsp;
-        <a href="faq.php"> FAQ </a>&nbsp; &nbsp;
-    </nav>
-    <h2> WELCOME TO YOUR VERY OWN PERSONAL ASSISTENT</h2>
-    <p> In modern lifestyle we have to do lot of things, be at different places and communicate with lot of people.
-        It gets complicated to manage all this. You have to plan your day, week even a month at a time.
-        <br><b> So join us , manage your day with ease.</b></p>
+if (isset($_POST['submit'])) {
+    try {
+        require "php/db_conn.php";
+        $e = null;
 
-    <form method="POST" action = "php/index.php">
-        <label id="user"> Username:</label>
+        $querry = sprintf("SELECT passHash FROM login WHERE userName = '%s' ;", $_POST['userName']);
+        $pdo_st = $pdo->query($querry);
+        $pdo_st->setFetchMode(PDO::FETCH_ASSOC);
 
-        <input type="text" name="userName" id="user">
-        <br><br>
-        <label id="pass"> Password: </label>
-        <input type="password" name="pass" id="pass">
-        <br><br>
-        <input type="submit" name="submit" value="submit">
-    </form>
+        $array = $pdo_st->fetch();
+        $isMatch = password_verify($_POST['pass'], $array['passHash']);
 
-
-</body>
-
-</html> 
+        if ($isMatch == true) {
+            session_start();
+            $_SESSION['userName'] = $_POST['userName'];
+            header("location: view.php"); //redirects user to view page upon successful login!
+        }
+        else {
+            echo $twig -> render('index.html',array('login' => 'false' ) );
+        }
+    } catch (PDOException $e) {
+        echo ($e->getMessage() . " " . $e->getLine());
+    }
+}
+else {
+    echo $twig -> render('index.html');
+}

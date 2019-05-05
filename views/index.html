@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="utf-8">
+    <title>Personal Assistence</title>
+</head>
+
+<body style='background-image:url("img/back.jpg"); background-repeat: no-repeat;'>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php"> Index </a> &nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="register.php"> Register </a>&nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="create.php"> Create List </a>&nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="view.php"> View List</a>&nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
+            </li>
+        </ul>
+    </nav>
+
+    <h2 style="text-align: center; margin-top:80px"> WELCOME TO YOUR VERY OWN PERSONAL ASSISTENT</h2>
+    <p style="text-align: center;"> In modern lifestyle we have to do lot of things, be at different places and communicate with lot of people.
+        It gets complicated to manage all this. You have to plan your day, week even a month at a time.
+        <br><b> So join us , manage your day with ease.</b></p>
+
+    <form method="POST" action = "index.php">
+        <label id="user"> Username:</label>
+
+        <input type="text" name="userName" id="user">
+        <br><br>
+        <label id="pass"> Password: </label>
+        <input type="password" name="pass" id="pass">
+        <br><br>
+        <input class='btn btn-success'type="submit" name="submit" value="submit">
+    </form>
+    <br> <br>
+    {%  if login is not null %}
+        <h3 style="text-align:center;"> Incorrect username and password, please try again!</h3>
+    {% endif %}
+
+</body>
+
+</html> 
