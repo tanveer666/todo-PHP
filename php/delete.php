@@ -1,4 +1,7 @@
 <?php
+/*
+ * This takes a task ID and deletes it from the database.
+*/
 require "db_conn.php";
 session_start();
 $e = null;

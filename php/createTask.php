@@ -1,4 +1,7 @@
 <?php
+/*
+ * Takes task (user input) and inserts into the databse. The name of the data table is also the username.
+*/
 session_start();
 require "db_conn.php";
 $e = NULL;

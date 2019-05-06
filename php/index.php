@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
         if ($isMatch == true) {
             session_start();
-            $_SESSION['userName'] = $_POST['userName'];
+            $_SESSION['userName'] = $_POST['userName']; //Starts the session with the username!
             header("location: ../view.php"); //redirects user to view page upon successful login!
         }
         else {
