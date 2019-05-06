@@ -36,6 +36,13 @@ require "php/db_conn.php";
                 <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
             </li>
         </ul>
+        <ul style='text-align:end;' class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="php/logout.php">
+                    <input class='btn btn-info' type = 'submit' name =' logout' value = 'logout'>
+                </form>
+            </li>    
+          </ul>
     </nav>
 
     <h2 style="text-align: center; margin-top:80px; margin-bottom:30px;"> Edit Task </h2>
@@ -59,7 +66,6 @@ require "php/db_conn.php";
                     <br> <br>
         <input class="btn btn-success" type='submit' id='submit' name='save' value='save'>
     </form>
-
    
 </body>
 

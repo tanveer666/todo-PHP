@@ -26,7 +26,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
             </li>
+
         </ul>
+
+        <ul style=' text-align:end;' class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="php/logout.php">
+                    <input class='btn btn-info' type = 'submit' name =' logout' value = 'logout'>
+                </form>
+            </li>    
+          </ul>
     </nav>
 
     <h2 style="text-align: center; margin-top:80px"> WELCOME TO YOUR VERY OWN PERSONAL ASSISTENT</h2>
@@ -44,10 +53,12 @@
         <br><br>
         <input class='btn btn-success'type="submit" name="submit" value="submit">
     </form>
+
     <br> <br>
-    <form class='btn btn-success' method="GET" action="php/logout.php">
-        <input type = 'submit' name =' logout' value = 'logout'>
+    <form method="GET" action="php/logout.php">
+        <input class='btn btn-danger' type = 'submit' name =' logout' value = 'logout'>
     </form>
+    
     {%  if login is not null %}
         <h3 style="text-align:center;"> Incorrect username and password, please try again!</h3>
     {% endif %}

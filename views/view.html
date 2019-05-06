@@ -29,6 +29,14 @@
                 <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
             </li>
         </ul>
+
+        <ul style='text-align:end;' class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="php/logout.php">
+                    <input class='btn btn-info' type = 'submit' name =' logout' value = 'logout'>
+                </form>
+            </li>    
+          </ul>
     </nav>
 
     {% if tasks is not null %}
@@ -98,13 +106,14 @@
         {% endif %}
         {% endfor %}
 
-
+        <br> <br>
+    
 
     </table>
     {% else %}
     <h2 style="text-align: center; margin-top:80px"> Please log in </h2>
     {% endif %}
-    
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -30,6 +30,13 @@
                 <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
             </li>
         </ul>
+        <ul style='text-align:end;' class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="php/logout.php">
+                    <input class='btn btn-info' type = 'submit' name =' logout' value = 'logout'>
+                </form>
+            </li>    
+          </ul>
     </nav>
 
     <h2 style="text-align: center; margin-top:80px"> Registration</h2>
@@ -53,6 +60,8 @@
          <br> <input class="btn btn-success" type="submit" name="submit" value="submit" id = "submit" disabled> <!-- If username is available and both passwords match, the submit button is enabled. -->
     </form>
     </div>
+
+
 
     
 </body>

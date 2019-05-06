@@ -33,6 +33,14 @@ session_start();
                 <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
             </li>
         </ul>
+
+        <ul style='text-align:end;' class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="php/logout.php">
+                    <input class='btn btn-info' type = 'submit' name =' logout' value = 'logout'>
+                </form>
+            </li>    
+          </ul>
     </nav>
 
         <h2 style="text-align: center; margin-top:80px"> Create List</h2>
@@ -51,6 +59,7 @@ session_start();
             <input class="btn btn-success" type="submit" name = "submit" value="submit" id='submit'> <br>
         </form>
         </div>
+        <br> <br>
 
     </body>
 </html>
