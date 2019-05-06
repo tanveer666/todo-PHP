@@ -45,6 +45,9 @@
         <input class='btn btn-success'type="submit" name="submit" value="submit">
     </form>
     <br> <br>
+    <form class='btn btn-success' method="GET" action="php/logout.php">
+        <input type = 'submit' name =' logout' value = 'logout'>
+    </form>
     {%  if login is not null %}
         <h3 style="text-align:center;"> Incorrect username and password, please try again!</h3>
     {% endif %}
