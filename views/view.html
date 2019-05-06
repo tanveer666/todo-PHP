@@ -32,7 +32,7 @@
     </nav>
 
     {% if tasks is not null %}
-    <h2 style="text-align: center; margin-top:80px"> View Tasks for today</h2>
+    <h2 style="text-align: center; margin-top:80px"> View Tasks</h2>
     <form method='POST' action="view.php" id = "select">
         <select name = "amount"  id = "selectElement" form = "select" onchange="enableInput(this.options[this.selectedIndex].value);">
             <option value = "today"> Today</option>
@@ -42,11 +42,18 @@
         <br> <br>
         <input type="text" name = "custom" id="dateInput" onkeyup="dateValid();" disabled>
         <br> <br>
+
+        <select name = "completion" id='selectComp' form='select'>
+            <option value="todo"> To do </option>
+            <option value="done"> Done</option>
+            <option value="all">All</option> 
+        </select>
+
+
         <input type="submit" name = "submit" id = "submit" value = "submit">
     </form>
     
-    
-    <table class="table table-success table-hover" style="margin-left:auto; margin-right:auto;margin-top: 35px">
+    <table class="table table-dark table-hover" style="margin-left:auto; margin-right:auto;margin-top: 35px">
         <tr>
 
             <th class="table-info"> STATUS </th>
@@ -67,15 +74,14 @@
 
         {% for task in tasks %}
         {% if 1 in task.task_completion %}
-        <tr class="table-danger">
+        <tr class="table-success">
             <td> DONE </td>
             <td>{{ task.taskID }}</td>
             <td>{{ task.t_date }}</td>
             <td>{{ task.t_time }}</td>
             <td>{{ task.task }}</td>
-            <td> <input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input>
-            </td>
-            <td> <input class="btn btn-secondary" type='submit' form='edit' value='edit' name={{task.taskID}}> </td>
+            <td> <input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input></td>
+            <td> <input class="btn btn-primary" type='submit' form='edit' value='edit' name={{task.taskID}}> </td>
             <td> <input class="btn btn-danger" type='submit' form='delete' value='delete' name={{task.taskID}}> </td>
         </tr>
         {% else %}
@@ -85,9 +91,8 @@
             <td>{{ task.t_date }}</td>
             <td>{{ task.t_time }}</td>
             <td>{{ task.task }}</td>
-            <td> <input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input>
-            </td>
-            <td> <input class="btn btn-secondary" type='submit' form='edit' value='edit' name={{task.taskID}}> </td>
+            <td> <input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input></td>
+            <td> <input class="btn btn-primary" type='submit' form='edit' value='edit' name={{task.taskID}}> </td>
             <td> <input class="btn btn-danger" type='submit' form='delete' value='delete' name={{task.taskID}}> </td>
         </tr>
         {% endif %}
