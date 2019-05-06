@@ -39,7 +39,7 @@ require "php/db_conn.php";
     </nav>
 
     <h2 style="text-align: center; margin-top:80px; margin-bottom:30px;"> Edit Task </h2>
-
+    <!-- Date and time validaion occurs at when submit button is pressed, if on of the is false, submission does not happen. -->
     <form class = 'form-group' style='text-align:center' method="POST" onsubmit="return (dateValid() && timeValid());" action="php/updateData.php">
         <label class="form-control-label"> Date : </label>
         <textarea name="date" rows="1" cols="10" id="date" onfocusout="dateValid()"><?php echo($row['t_date']); ?></textarea><br> <br>

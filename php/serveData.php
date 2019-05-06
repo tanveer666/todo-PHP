@@ -1,7 +1,7 @@
 <?php
 require "db_conn.php";
 session_start();
-$taskArray = array();
+$taskArray = array(); //global array used by view.php. array of task objects.
 // $amount = $_POST['amount'];
 class Task
 {
@@ -22,6 +22,12 @@ class Task
     }
 }
 
+/*
+ * functions execute the querries. each function takes a PDO object (in db_conn.php), the reference to $taskArray, and $comp (which is true false or null)
+ * $comp tell which tasks to display, if null it displays all, if 1 only completed if 0, then the ones need to be done.
+ * 
+ * One function also takes in a date string for custom date searches.
+*/
 
 function all($pdo, &$taskArr, $comp) {
     // $date = date('Y-m-d');
@@ -73,8 +79,14 @@ function custom($pdo, &$taskArr, $inputDate, $comp) {
     }
 }
 
-if ($amount == 'all') {
 
+/*
+ * Depending on the value for amount (which means all tasks, or todays task or task for some arbitrary date), different function is executed. 
+ * also in the view.php script. completion value is set .
+ * by default tho, when no info is submitted via post, it executes the last script. which means it will display today's todo list.
+ * 
+*/
+if ($amount == 'all') {
     try {
         all($pdo,$taskArray, $completion);
     } catch (PDOException $p) {
@@ -92,4 +104,11 @@ if ($amount == 'all') {
     } catch (PDOException $p) {
         echo ($p->getMessage() . " " . $p->getLine());
     }
+}  else {
+    try {
+        today($pdo,$taskArray, 0);
+    } catch (PDOException $p) {
+        echo ($p->getMessage() . " " . $p->getLine());
+    }
 }
+

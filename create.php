@@ -39,7 +39,7 @@ session_start();
         <div class='form'>
         <form class = 'form-group' style='text-align:center' action = "./php/createTask.php" method="POST" onsubmit="return dateValid()"> 
             <label class="form-control-label"> Date : </label>
-            <input type="text" name="date" id = 'date' onchange='dateValid();' required> <!-- <span id = 'dateText'> </span>  -->
+            <input type="text" name="date" id = 'date' onchange='dateValid();' required> <!-- <span id = 'dateText'> </span>  --> <!-- Datev alidation  -->
             
             <br><br><br>
             <label class="form-control-label" > Time : </label> 
@@ -48,7 +48,7 @@ session_start();
             <label class="form-control-label"> Task (upto 300 characters) :  </label>
             <textarea rows = "6" cols= "40" name = "todo" maxlength="300" required></textarea> <br> <br>
             
-            <input class="btn btn-outline-success" type="submit" name = "submit" value="submit" id='submit'> <br>
+            <input class="btn btn-success" type="submit" name = "submit" value="submit" id='submit'> <br>
         </form>
         </div>
 

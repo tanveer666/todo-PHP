@@ -1,15 +1,25 @@
 <?php
-require 'Twig/lib/Twig/Autoloader.php';
+/*
+ * Index page script. 
+ * loads the twig auto loader. checks if the submit button was pressed or not.
+ * If submited, then connects to the database and matches the password with the passhash of the user.
+ * If it matches, session is started and session userName is initialized.
+ * 
+ * If submitted but failed, the the index html is rendered with login = false, meaning that there was a failed login attempt. 
+ * So on the page is notified to try again.
+ * 
+ * If not submitted, then index is rendered but no additional info is sent.
+*/
+
+require 'Twig/lib/Twig/Autoloader.php'; 
 
 Twig_Autoloader::register();
-    // Load twig templating engine
-    $loader = new Twig_Loader_Filesystem('views');
-    $twig = new Twig_Environment($loader);
+    // Loads twig templating engine
+    $loader = new Twig_Loader_Filesystem('views'); //Location of the html pages in the filesystem.
+    $twig = new Twig_Environment($loader); //twig object.
 
     // Enable debugging so we can dump array
-    $twig = new \Twig\Environment($loader, [
-    'debug' => true,
-    ]);
+    $twig = new \Twig\Environment($loader, ['debug' => true,]); //set debugging mode
     $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 if (isset($_POST['submit'])) {
