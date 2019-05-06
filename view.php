@@ -2,6 +2,12 @@
 /*
  * View page.
  * Twig is loaded.
+ * session is started.
+ * 
+ * if userName is present (meaning user is logged in), it executes the script serveData which returns a $taskArray global variable containing task objects.
+ * Then this task Array rendered with twig for the view.html where the appropriate values are input into the templates.
+ * 
+ * else it renders view.html with tasks as null, which urges the user to log in.
 */
 session_start();
 require 'Twig/lib/Twig/Autoloader.php';
