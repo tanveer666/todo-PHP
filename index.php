@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         require "php/db_conn.php";
         $e = null;
 
-        $querry = sprintf("SELECT passHash FROM login WHERE userName = '%s' ;", $_POST['userName']);
+        $querry = sprintf("SELECT passHash FROM login WHERE userName = BINARY '%s' ;", $_POST['userName']);
         $pdo_st = $pdo->query($querry);
         $pdo_st->setFetchMode(PDO::FETCH_ASSOC);
 
