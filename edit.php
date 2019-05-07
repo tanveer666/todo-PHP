@@ -33,7 +33,7 @@ require "php/db_conn.php";
                 <a class="nav-link" href="view.php"> View List</a>&nbsp; &nbsp;
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
+                <a class="nav-link" href="faq.php"> About us </a>&nbsp; &nbsp;
             </li>
         </ul>
         <ul style='text-align:end;' class="navbar-nav ml-auto">

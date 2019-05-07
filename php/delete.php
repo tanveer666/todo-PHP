@@ -12,7 +12,7 @@ if (isset($arr)) {
             $pdo->exec($query_st);
              header("location: ../view.php");
         } catch (PDOException $e) {
-            echo ($e->getMessage() . " " . $e->getLine());
+            // echo ($e->getMessage() . " " . $e->getLine());
         }
     }
 

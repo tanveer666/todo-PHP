@@ -9,6 +9,6 @@ if (isset($arr)) {
         $pdo -> exec($query);
         header("location: ../view.php");
     }catch (PDOException $e) {
-        echo ($e->getMessage() . " " . $e->getcode());
+        // echo ($e->getMessage() . " " . $e->getcode());
     }
 }

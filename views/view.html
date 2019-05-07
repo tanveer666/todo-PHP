@@ -26,7 +26,7 @@
                 <a class="nav-link" href="view.php"> View List</a>&nbsp; &nbsp;
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="faq.php"> FAQ </a>&nbsp; &nbsp;
+                <a class="nav-link" href="faq.php"> About us </a>&nbsp; &nbsp;
             </li>
         </ul>
 
@@ -88,7 +88,7 @@
             <td>{{ task.t_date }}</td>
             <td>{{ task.t_time }}</td>
             <td>{{ task.task }}</td>
-            <td> <input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input></td>
+            <td> <!---<input class="btn btn-warning" type='submit' form='done' value='done?' name={{task.taskID}}> </input> --></td>
             <td> <input class="btn btn-primary" type='submit' form='edit' value='edit' name={{task.taskID}}> </td>
             <td> <input class="btn btn-danger" type='submit' form='delete' value='delete' name={{task.taskID}}> </td>
         </tr>

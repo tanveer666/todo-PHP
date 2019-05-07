@@ -90,25 +90,25 @@ if ($amount == 'all') {
     try {
         all($pdo,$taskArray, $completion);
     } catch (PDOException $p) {
-        echo ($p->getMessage() . " " . $p->getLine());
+        // echo ($p->getMessage() . " " . $p->getLine());
     }
 } elseif ($amount == 'today'){
     try {
         today($pdo,$taskArray, $completion);
     } catch (PDOException $p) {
-        echo ($p->getMessage() . " " . $p->getLine());
+        // echo ($p->getMessage() . " " . $p->getLine());
     }
 } elseif( $amount == 'custom') {
     try {
         custom($pdo,$taskArray,$custom, $completion);
     } catch (PDOException $p) {
-        echo ($p->getMessage() . " " . $p->getLine());
+        // echo ($p->getMessage() . " " . $p->getLine());
     }
 }  else {
     try {
         today($pdo,$taskArray, 0);
     } catch (PDOException $p) {
-        echo ($p->getMessage() . " " . $p->getLine());
+        // echo ($p->getMessage() . " " . $p->getLine());
     }
 }
 

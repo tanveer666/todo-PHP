@@ -28,7 +28,7 @@ function searchUser() {
     if (userName.length == 0) {
         document.getElementById("suggest").innerHTML = "Enter your user name";
         document.getElementById("submit").disabled = true;
-    } else {
+    } else { //Executes the block only when a change in username has occured.
         var xmlhttp = new XMLHttpRequest(); // new request obejct
         // document.getElementById("suggest").innerHTML = "request object created";
         xmlhttp.onreadystatechange = function () { //on a change of request state, execute this function

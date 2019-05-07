@@ -9,7 +9,7 @@ if (isset($_POST['save'])) {
         $pdo->exec($querry);
         header("location: ../view.php");
     } catch (PDOException $e) {
-        echo ($e->getMessage() . " " . $e->getLine());
+        // echo ($e->getMessage() . " " . $e->getLine());
     }
 }
 ?>

@@ -16,6 +16,6 @@ if (isset($_REQUEST['name'])) {
         }
 
     } catch (PDOException $e) {
-        echo ($e->getMessage());
+    //     echo ($e->getMessage());
     }
 }

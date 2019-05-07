@@ -13,6 +13,6 @@ if (isset($_SESSION['userName'])) {
         $pdo_st->setFetchMode(PDO::FETCH_ASSOC);
         $row = $pdo_st->fetch();
     } catch (PDOException $ex) {
-        echo ($ex->getMessage() . " " . $ex->getLine());
+        // echo ($ex->getMessage() . " " . $ex->getLine());
     }
 }

@@ -16,7 +16,7 @@
             header("location: ../index.php");
         } catch (PDOException $e) {
             echo "User name is taken, please choose something else.";
-            echo ("querry failiure " . $e->getMessage() . " " . $e->getLine());
+            // echo ("querry failiure " . $e->getMessage() . " " . $e->getLine());
         }
     }
 ?>

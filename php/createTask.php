@@ -22,7 +22,7 @@ if( isset($_POST['submit']))
     }
     catch(PDOException $e)
     {
-    echo("querry error ". $e -> getMessage(). " ". $e -> getLine(). " ");
+    // echo("querry error ". $e -> getMessage(). " ". $e -> getLine(). " ");
     }
 }
 ?>
